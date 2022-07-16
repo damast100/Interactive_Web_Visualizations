@@ -52,10 +52,10 @@ function charts(each) {
 });
 }
 
-function metaData(each) {
+function metaData(sample) {
   d3.json("samples.json").then((data) => {
     var metadata = data.metadata;
-    var resultsArray = metadata.filter(sampleobject => sampleobject.id === each);
+    var resultsArray = metadata.filter(sampleobject => sampleobject.id == sample);
     var result = resultsArray[0]
     var panel = d3.select("#sample-metadata");
     panel.html("");
